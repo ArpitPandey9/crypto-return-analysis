@@ -1,33 +1,24 @@
-# 🧮 Crypto Return Analysis
+# Crypto Return Analysis
 
-Welcome to my crypto quant mini-project. This notebook performs a basic return and cumulative return analysis on Bitcoin (BTC) price data using Python and pandas.
+An exploratory notebook-based BTC return-analysis project using pandas. This repository is retained as an early quantitative-research learning artifact.
 
----
+## Tracked notebook(s)
 
-## 📌 Project Overview
+- `btc_return_analysis_.ipynb`
 
-This project introduces:
-- Reading and manipulating price data using `pandas`
-- Calculating daily returns and cumulative returns
-- Preparing the base for backtesting and strategy evaluation
+## Scope
 
----
+The notebook is the source of truth for the exact dataset, transformations, return calculations, charts, and assumptions used in this snapshot.
 
-## 💻 Tools Used
+The project is intended to demonstrate basic return-analysis workflow and notebook-based exploration rather than a complete asset-pricing, forecasting, or trading system.
 
-- Python 3.x
-- Jupyter Notebook
-- pandas
-- numpy
+## Validation
 
----
+GitHub Actions checks that the tracked notebook remains valid JSON on pushes and pull requests.
 
-## 📊 Sample Output
+## Limitations
 
-```plaintext
-    Day     BTC    Return  Cumulative
-0   Mon  30200.0  0.000000    1.000000
-1   Tue  30500.0  0.009934    1.009934
-2   Wed  30050.0 -0.014754    0.995071
-3   Thu  31000.0  0.031588    1.026489
-4   Fri  31500.0  0.016129    1.043041
+- No claim of persistent predictive edge or trading alpha is made.
+- Historical exploratory analysis should not be interpreted as a live trading signal.
+- Data provenance and methodology should be read directly from the notebook before reusing any result.
+- This repository is not an investment recommendation or production research system.

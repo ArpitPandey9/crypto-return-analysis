@@ -1,0 +1,43 @@
+name: Notebook validation
+
+permissions: {}
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Validate notebook JSON
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          notebooks = sorted(Path(".").glob("*.ipynb"))
+          if not notebooks:
+              raise SystemExit("No top-level notebook found")
+
+          for path in notebooks:
+              json.loads(path.read_text(encoding="utf-8-sig"))
+              print(f"valid: {path}")
+          PY
+
+      - name: Validate README
+        run: test -s README.md
